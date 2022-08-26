@@ -1,6 +1,6 @@
 const afs = require('@agacraft/fs');
-require('@agacraft/extensions/Object');
-require('@agacraft/extensions/Array');
+require('@agacraft/extension/Object');
+require('@agacraft/extension/Array');
 
 class Json {
   #object;
