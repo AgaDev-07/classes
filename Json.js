@@ -15,7 +15,7 @@ class Json {
     return JSON.stringify(this.#object, null, 2);
   }
   compare(Json) {
-    return Json.toObject().compare(this.#object)
+    return Json.toObject().compare(this.#object);
   }
   copy() {
     return new Json(this.toObject());
