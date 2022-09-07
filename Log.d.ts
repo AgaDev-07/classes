@@ -4,6 +4,7 @@ declare class Log {
     stream?: NodeJS.WritableStream;
     useFileLog?: Boolean;
     dir?: fs.PathLike;
+    fileName?: fs.PathLike;
   });
   log(...message: any[]): void;
   info(...message: any[]): void;
