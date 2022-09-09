@@ -1,14 +1,17 @@
-import fs from 'fs';
+/// <reference types="node" />
+import '@agacraft/functions/colors';
+declare type opts = {
+    useFileLog?: boolean;
+    dir?: string;
+    fileName?: any;
+    stream?: NodeJS.WriteStream;
+};
 declare class Log {
-  constructor(options?: {
-    stream?: NodeJS.WritableStream;
-    useFileLog?: Boolean;
-    dir?: fs.PathLike;
-    fileName?: fs.PathLike;
-  });
-  log(...message: any[]): void;
-  info(...message: any[]): void;
-  warn(...message: any[]): void;
-  error(...message: any[]): void;
+    #private;
+    constructor(options?: opts);
+    log(...message: string[]): void;
+    warn(...message: string[]): void;
+    info(...message: string[]): void;
+    error(...message: string[]): void;
 }
 export = Log;
