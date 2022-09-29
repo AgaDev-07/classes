@@ -7,15 +7,20 @@
     "type": "git",
     "url": "git+https://github.com/AdrianCraft07/classes.git"
   },
-  "keywords": ["library", "node", "aga", "aga-craft"],
+  "keywords": [
+    "library",
+    "node",
+    "aga",
+    "aga-craft"
+  ],
   "author": "AgaCraft",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AdrianCraft07/classes/issues"
   },
   "dependencies": {
-    "@agacraft/fs": "^1.0.0",
     "@agacraft/extension": "^1.0.0",
+    "@agacraft/fs": "^1.0.0",
     "@agacraft/functions": "^1.0.1"
   },
   "homepage": "https://github.com/AdrianCraft07/classes#readme"
