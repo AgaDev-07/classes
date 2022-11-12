@@ -5,7 +5,16 @@ declare const _default: {
         toString(): string;
         toObject(): any;
         setLang(key: string, value: any): void;
-        copy(): any;
+        copy(name: string): any;
+        toFile(path: string): void;
+    };
+    read(path: string): {
+        "__#3@#lang": any;
+        name: string;
+        toString(): string;
+        toObject(): any;
+        setLang(key: string, value: any): void;
+        copy(name: string): any;
         toFile(path: string): void;
     };
 };
