@@ -76,15 +76,21 @@ class Log {
                     .filter(v => v != null)
                     .join(' ')}>, byteLength: 2 }`;
             }
+            else if (object === null)
+                return 'null'.whiteBright;
         if (typeof object === 'string')
             return `"${object.replace(/\r/g, '\\r').replace(/\n/g, '\\n')}"`.green;
-        if (typeof object === 'number')
+        if (typeof object === 'number' || typeof object === 'bigint')
             return `${object}`.yellow;
         if (typeof object === 'boolean')
             return `${object}`.yellow;
-        if (object === null)
-            return 'null'.whiteBright;
-        return object;
+        if (typeof object === 'undefined')
+            return 'undefined'.gray;
+        if (typeof object === 'function')
+            return `[Function ${object.name || '(anonymous)'}]`.cyan;
+        if (typeof object === 'symbol')
+            return `Symbol(${object.description||''})`.green;
+        return object
     }
     #format(object, countOpen = 0) {
         let countArray = 0;
