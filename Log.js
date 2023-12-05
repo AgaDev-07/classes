@@ -163,9 +163,9 @@ class Log {
         const date = new Date();
         const logTime = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
         let newMessage = '';
-        if (level.clear != 'error')
+        if (isArray(message))
             newMessage = [
-                `[${logTime}]${level == 'log' ? '' : `[${level}]`}`,
+                `[${logTime}]${level.clear == 'LOG' ? '' : `[${level}]`}`,
                 ...message.map(v => {
                     if (typeof v === 'string')
                         return v.includes('\r') ? v.split('\r').reverse()[0] : v;
@@ -174,7 +174,7 @@ class Log {
             ].join(' ');
         else
             newMessage = [
-                `${level == 'LOG' ? '' : `[${level}]`}[${logTime}]`,
+                `${level.clear == 'LOG' ? '' : `[${level}]`}[${logTime}]`,
                 message,
             ].join(' ');
         this.#options.stream?.write(newMessage + '\n');
